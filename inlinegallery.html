@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carousel LightGallery</title>
-    
+    <title>Carousel Gallery with Scrollable Thumbnails</title>
+
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
     <!-- LightGallery CSS -->
@@ -24,6 +24,7 @@
             overflow: hidden;
         }
 
+        /* Main Swiper Carousel */
         .swiper-container {
             width: 100%;
             padding-bottom: 20px;
@@ -35,13 +36,42 @@
             border-radius: 8px;
             cursor: pointer;
         }
+
+        /* Thumbnail Ribbon */
+        .thumbnail-container {
+            display: flex;
+            overflow-x: auto;
+            gap: 10px;
+            padding: 10px 0;
+            scrollbar-width: none; /* Hide scrollbar */
+        }
+
+            .thumbnail-container::-webkit-scrollbar {
+                display: none; /* Hide scrollbar for Chrome, Safari */
+            }
+
+        .thumbnail {
+            width: 80px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s ease, border 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+            .thumbnail:hover, .thumbnail.active {
+                transform: scale(1.1);
+                border: 2px solid #007bff;
+            }
     </style>
 </head>
 <body>
 
-    <h2>Carousel LightGallery</h2>
+    <h2>Carousel LightGallery with Scrollable Thumbnails</h2>
 
     <div class="gallery-container">
+        <!-- Main Swiper Carousel -->
         <div class="swiper-container">
             <div class="swiper-wrapper" id="gallery">
                 <!-- Images will be dynamically inserted here -->
@@ -50,6 +80,11 @@
             <div class="swiper-button-next"></div>
             <div class="swiper-button-prev"></div>
             <div class="swiper-pagination"></div>
+        </div>
+
+        <!-- Scrollable Thumbnails -->
+        <div class="thumbnail-container" id="thumbnail-container">
+            <!-- Thumbnails will be inserted dynamically -->
         </div>
     </div>
 
@@ -61,22 +96,42 @@
     <script src="https://cdn.jsdelivr.net/npm/lightgallery/plugins/zoom/lg-zoom.umd.js"></script>
 
     <script>
-        const imageUrls = [
-            "https://source.unsplash.com/random/600x400?sig=1",
-            "https://source.unsplash.com/random/600x400?sig=2",
-            "https://source.unsplash.com/random/600x400?sig=3",
-            "https://source.unsplash.com/random/600x400?sig=4",
-            "https://source.unsplash.com/random/600x400?sig=5"
+        const images = [
+            { src: "images/portfolioImg/modals/Picture1.jpg", caption: "A beautiful sunrise over the mountains." },
+            { src: "images/portfolioImg/modals/Picture2.jpg", caption: "Serene lake view with a clear blue sky." },
+            { src: "images/portfolioImg/modals/Picture3.jpg", caption: "A cozy cabin in the snowy forest." },
+            { src: "images/portfolioImg/modals/Picture4.jpg", caption: "Golden wheat fields swaying in the wind." },
+            { src: "images/portfolioImg/modals/Picture5.jpg", caption: "A vibrant city skyline at night." }
         ];
 
         const gallery = document.getElementById("gallery");
+        const thumbnailContainer = document.getElementById("thumbnail-container");
 
-        // Load images dynamically into Swiper
-        imageUrls.forEach((src, index) => {
+        // Load images dynamically into Swiper and create thumbnails
+        images.forEach((image, index) => {
+            // Add images to Swiper carousel
             const slide = document.createElement("div");
             slide.className = "swiper-slide";
-            slide.innerHTML = `<a href="${src}" data-lg-size="600-400"><img src="${src}" alt="Gallery Image"></a>`;
+            slide.innerHTML = `
+                    <a href="${image.src}" data-lg-size="600-400" data-sub-html="<p>${image.caption}</p>">
+                        <img src="${image.src}" alt="Gallery Image">
+                    </a>`;
             gallery.appendChild(slide);
+
+            // Add thumbnails
+            const thumb = document.createElement("img");
+            thumb.className = "thumbnail";
+            thumb.src = image.src;
+            thumb.alt = `Thumbnail ${index + 1}`;
+            thumb.dataset.index = index; // Store index for reference
+
+            // Click event to navigate to corresponding slide
+            thumb.addEventListener("click", () => {
+                swiper.slideToLoop(index);
+                updateActiveThumbnail(index);
+            });
+
+            thumbnailContainer.appendChild(thumb);
         });
 
         // Initialize Swiper Carousel
@@ -92,14 +147,30 @@
                 el: '.swiper-pagination',
                 clickable: true,
             },
+            on: {
+                slideChange: function () {
+                    updateActiveThumbnail(swiper.realIndex);
+                }
+            }
         });
 
-        // Initialize LightGallery
+        // Initialize LightGallery with Captions
         lightGallery(document.querySelector(".swiper-container"), {
             selector: 'a',
             thumbnail: true,
-            zoom: true
+            zoom: true,
+            caption: true
         });
+
+        // Update the active thumbnail on slide change
+        function updateActiveThumbnail(index) {
+            document.querySelectorAll(".thumbnail").forEach((thumb, i) => {
+                thumb.classList.toggle("active", i === index);
+            });
+        }
+
+        // Set first thumbnail as active
+        updateActiveThumbnail(0);
     </script>
 
 </body>
