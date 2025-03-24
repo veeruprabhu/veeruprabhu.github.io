@@ -134,8 +134,8 @@
             thumbnailContainer.appendChild(thumb);
         });
 
-        // Initialize Swiper Carousel
-        const swiper = new Swiper('.swiper-container', {
+        // Declare Swiper instance
+        let swiper = new Swiper('.swiper-container', {
             loop: true,
             spaceBetween: 10,
             slidesPerView: 1,
@@ -146,12 +146,12 @@
             pagination: {
                 el: '.swiper-pagination',
                 clickable: true,
-            },
-            on: {
-                slideChange: function () {
-                    updateActiveThumbnail(swiper.realIndex);
-                }
             }
+        });
+
+        // Attach event listener for slide change separately
+        swiper.on('slideChange', function () {
+            updateActiveThumbnail(swiper.realIndex);
         });
 
         // Initialize LightGallery with Captions
