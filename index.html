@@ -47,9 +47,45 @@
 
     .inline-gallery-container {
         width: 100%;
-        // set 60% height height: 0;
+       /* set 60% height height: 0;*/
         padding-bottom: 65%;
     }
+    .read-more {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        color: white;
+        text-align: center;
+        padding: 14px;
+        font-size: 17px;
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+        transition: all 0.3s ease;        
+    }
+
+        .read-more:hover {
+            background: rgba(0, 0, 0, 0.8);
+            box-shadow: 0px -3px 10px rgba(255, 75, 43, 0.5);
+        }
+
+        .read-more span {
+            font-size: 20px;
+            font-weight: bold;
+            transition: transform 0.3s ease;
+        }
+
+        .read-more:hover span {
+            transform: translateX(5px);
+        }
+        /* Mobile: Tap Effect */
+        .read-more:active {
+            background: rgba(255, 75, 43, 0.9);
+        }
 </style>  
 </head>
 
@@ -372,6 +408,7 @@
                                         <!--<p>Illustrration</p>-->
                                     </div>
                                 </div>
+                                <div class="read-more">Read More <span>&#8594;</span></div>
                                 <div class="link-icon"><i class="icon-plus"></i></div>
                             </a>
 
@@ -389,6 +426,7 @@
                                         <!--<p>Web Development</p>-->
                                     </div>
                                 </div>
+                                <div class="read-more">Read More <span>&#8594;</span></div>
                                 <div class="link-icon"><i class="icon-plus"></i></div>
                             </a>
 
@@ -406,6 +444,7 @@
                                         <!--<p>Webdesign</p>-->
                                     </div>
                                 </div>
+                                <div class="read-more">Read More <span>&#8594;</span></div>
                                 <div class="link-icon"><i class="icon-plus"></i></div>
                             </a>
 
@@ -423,6 +462,7 @@
                                         <!--<p>Photography</p>-->
                                     </div>
                                 </div>
+                                <div class="read-more">Read More <span>&#8594;</span></div>
                                 <div class="link-icon"><i class="icon-plus"></i></div>
                             </a>
 
@@ -440,6 +480,7 @@
                                         <!--<p>Branding</p>-->
                                     </div>
                                 </div>
+                                <div class="read-more">Read More <span>&#8594;</span></div>
                                 <div class="link-icon"><i class="icon-plus"></i></div>
                             </a>
 
@@ -962,89 +1003,89 @@
                     src: 'images/gallery/pic0.jpg',
                     thumb: 'img/thumb1.jpg',
                     subHtml: `<div class="lightGallery-captions">
-                <h4>Caption 1</h4>
-                <p>Description of the slide 1</p>
-                </div>`,
+                            <h4>Caption 1</h4>
+                            <p>Description of the slide 1</p>
+                            </div>`,
                 },
                 {
                     src: 'images/gallery/pic1.jpg',
                     thumb: 'img/thumb1.jpg',
                     subHtml: `<div class="lightGallery-captions">
-<h4>Caption 1</h4>
-<p>Description of the slide 1</p>
-</div>`,
+                            <h4>Caption 1</h4>
+                            <p>Description of the slide 1</p>
+                            </div>`,
                 },
                 {
                     src: 'images/gallery/pic2.jpg',
                     thumb: 'img/thumb1.jpg',
                     subHtml: `<div class="lightGallery-captions">
-<h4>Caption 1</h4>
-<p>Description of the slide 1</p>
-</div>`,
+                            <h4>Caption 1</h4>
+                            <p>Description of the slide 1</p>
+                            </div>`,
                 },
                 {
                     src: 'images/gallery/pic3.jpg',
                     thumb: 'img/thumb1.jpg',
                     subHtml: `<div class="lightGallery-captions">
-<h4>Caption 1</h4>
-<p>Description of the slide 1</p>
-</div>`,
+                            <h4>Caption 1</h4>
+                            <p>Description of the slide 1</p>
+                            </div>`,
                 },
                 {
                     src: 'images/gallery/pic4.jpg',
                     thumb: 'img/thumb1.jpg',
                     subHtml: `<div class="lightGallery-captions">
-<h4>Caption 1</h4>
-<p>Description of the slide 1</p>
-</div>`,
+                            <h4>Caption 1</h4>
+                            <p>Description of the slide 1</p>
+                            </div>`,
                 },
                 {
                     src: 'images/gallery/pic5.jpg',
                     thumb: 'img/thumb1.jpg',
                     subHtml: `<div class="lightGallery-captions">
-<h4>Caption 1</h4>
-<p>Description of the slide 1</p>
-</div>`,
+                            <h4>Caption 1</h4>
+                            <p>Description of the slide 1</p>
+                            </div>`,
                 },
                 {
                     src: 'images/gallery/pic6.jpg',
                     thumb: 'img/thumb1.jpg',
                     subHtml: `<div class="lightGallery-captions">
-<h4>Caption 1</h4>
-<p>Description of the slide 1</p>
-</div>`,
+                            <h4>Caption 1</h4>
+                            <p>Description of the slide 1</p>
+                            </div>`,
                 },
                 {
                     src: 'images/gallery/pic7.jpg',
                     thumb: 'img/thumb1.jpg',
                     subHtml: `<div class="lightGallery-captions">
-<h4>Caption 1</h4>
-<p>Description of the slide 1</p>
-</div>`,
+                            <h4>Caption 1</h4>
+                            <p>Description of the slide 1</p>
+                            </div>`,
                 },
                 {
                     src: 'images/gallery/pic8.jpg',
                     thumb: 'img/thumb1.jpg',
                     subHtml: `<div class="lightGallery-captions">
-<h4>Caption 1</h4>
-<p>Description of the slide 1</p>
-</div>`,
+                            <h4>Caption 1</h4>
+                            <p>Description of the slide 1</p>
+                            </div>`,
                 },
                 {
                     src: 'images/gallery/pic9.jpg',
                     thumb: 'img/thumb1.jpg',
                     subHtml: `<div class="lightGallery-captions">
-<h4>Caption 1</h4>
-<p>Description of the slide 1</p>
-</div>`,
+                            <h4>Caption 1</h4>
+                            <p>Description of the slide 1</p>
+                            </div>`,
                 },
                 {
                     src: 'images/gallery/pic10.jpg',
                     thumb: 'img/thumb1.jpg',
                     subHtml: `<div class="lightGallery-captions">
-<h4>Caption 1</h4>
-<p>Description of the slide 1</p>
-</div>`,
+                            <h4>Caption 1</h4>
+                            <p>Description of the slide 1</p>
+                            </div>`,
                 },
             ],
         });
