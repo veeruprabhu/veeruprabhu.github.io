@@ -86,6 +86,82 @@
         .read-more:active {
             background: rgba(255, 75, 43, 0.9);
         }
+
+        /* New section for stories */
+    .scroll-gallery-section {
+        padding: 40px 20px;
+        background-color: #f9f9f9;
+        margin-bottom: 40px;
+    }
+
+    .gallery-heading {
+        text-align: center;
+        font-size: 28px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        color: #2c3e50;
+    }
+
+    .scroll-container {
+        display: flex;
+        overflow-x: auto;
+        gap: 20px;
+        padding-bottom: 10px;
+        scroll-snap-type: x mandatory;
+    }
+
+        .scroll-container::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .scroll-container::-webkit-scrollbar-thumb {
+            background: #ccc;
+            border-radius: 4px;
+        }
+
+    .story-card {
+        flex: 0 0 auto;
+        width: 300px;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        scroll-snap-align: start;
+        transition: transform 0.3s ease;
+    }
+
+        .story-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .story-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+        }
+
+    .story-text {
+        padding: 15px;
+    }
+
+        .story-text h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+            color: #34495e;
+        }
+
+        .story-text p {
+            font-size: 14px;
+            color: #666;
+        }
+
+    @media (max-width: 768px) {
+        .story-card {
+            width: 240px;
+        }
+    }
+
 </style>  
 
     <!-- Google tag (gtag.js) -->
@@ -131,10 +207,10 @@
                     Consultant Pediatrician & Professor Emeritus,
                 </h3>
                 <h3>
-                    Kasturba Medical College, Mangalore <br>                   
+                    Kasturba Medical College, Mangalore <br>
                 </h3>
                 <h3>
-                    Keep <a class="smoothscroll" href="#about">scrolling</a> to learn more.                  
+                    Keep <a class="smoothscroll" href="#about">scrolling</a> to learn more.
                 </h3>
                 <hr />
                 <ul class="social">
@@ -185,12 +261,12 @@
                     <div class="columns contact-details">
 
                         <h2>Consultation Hours</h2>
-                        <p class="address">                           
-                                                             <span>
-                                                                 03:00 PM to 08:00 PM
-                                                             </span><br>
-                                                                    <span>(Weekdays only)</span><br>
-                                                                                                <span>For Appointments Call: 07490810791</span>
+                        <p class="address">
+                            <span>
+                                03:00 PM to 08:00 PM
+                            </span><br>
+                            <span>(Weekdays only)</span><br>
+                            <span>For Appointments Call: 07490810791</span>
                         </p>
 
                     </div>
@@ -208,13 +284,214 @@
         </div>
 
     </section> <!-- About Section End-->
+    <!-- ✨ Scroll Gallery Section Start -->
+    <!-- ✨ Legacy Stories Scroll Section Start -->
+    <!-- ✨ Scrollable Legacy Stories Section with Modal -->
+    <section class="scroll-gallery-section">
+        <h2 class="gallery-heading">Legacy of Service & Milestones</h2>
+        <div class="scroll-container">
+
+            <!-- Story 1 -->
+            <div class="story-card" onclick="openModal('story_1.jpg', 'PICU Established - 1995', 'With ₹67,000 raised via Mangalore Medical Relief Society, PICU was set up, thanks to donors like Mr. Felix Albuquerque and Mr. Percy Fernandes.')">
+                <img src="images/story/story_1.jpg" alt="PICU 1995">
+                <div class="story-text">
+                    <h3>PICU Established - 1995</h3>
+                    <p>With ₹67,000 raised via Mangalore Medical Relief Society, PICU was set up...</p>
+                </div>
+            </div>
+
+            <!-- Story 2 -->
+            <div class="story-card" onclick="openModal('story_2.jpg', 'Neonatal ICU at Lady Goschen - 1998', 'Despite staff resistance, Dr. Baliga appointed nurses personally, supported by Infosys to sustain this critical care unit.')">
+                <img src="images/story/story_2.jpg" alt="Lady Goschen NICU">
+                <div class="story-text">
+                    <h3>Neonatal ICU at Lady Goschen - 1998</h3>
+                    <p>Despite staff resistance, Dr. Baliga appointed nurses personally...</p>
+                </div>
+            </div>
+
+            <!-- Story 3 -->
+            <div class="story-card" onclick="openModal('story_3.jpg', 'Foundation Stone by Sudha Murthy - 2006', 'With Infosys Foundation support, advanced pediatric care infrastructure was built and completed in 18 months.')">
+                <img src="images/story/story_3.jpg" alt="Sudha Murthy Foundation">
+                <div class="story-text">
+                    <h3>Foundation Stone by Sudha Murthy - 2006</h3>
+                    <p>With Infosys Foundation support, advanced pediatric care infrastructure was built...</p>
+                </div>
+            </div>
+
+            <!-- Story 4 -->
+            <div class="story-card" onclick="openModal('story_4.jpg', 'Yeddyurappa’s Visit - 2007', 'During a surprise visit to Wenlock Hospital, ₹3 crore was sanctioned after witnessing Dr. Baliga’s work in neonatal care.')">
+                <img src="images/story/story_4.jpg" alt="Yeddyurappa visit">
+                <div class="story-text">
+                    <h3>Yeddyurappa’s Visit - 2007</h3>
+                    <p>During a surprise visit to Wenlock Hospital, ₹3 crore was sanctioned...</p>
+                </div>
+            </div>
+
+            <!-- Story 5 -->
+            <div class="story-card" onclick="openModal('story_5.jpg', 'Structure handed over to Karnataka state government - 2007', 'Dr. V.S. Acharya, Minister of Higher Education, received the Advanced Pediatric Care Center from the Infosys Foundation. Dignitaries like Yogesh Bhat, Dr. Raghuveer, and others were present.')">
+                <img src="images/story/story_5.jpg" alt="Hospital Launch">
+                <div class="story-text">
+                    <h3>Structure handed over to Karnataka state government - 2007</h3>
+                    <p>Dr. V.S. Acharya, Minister of Higher education arrived to receive the Advanced Pediatric Care Center...</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 🪟 Modal for Enlarged Story -->
+    <div id="storyModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img id="modalImg" src="" alt="Full Story Image">
+            <h3 id="modalTitle"></h3>
+            <p id="modalText"></p>
+        </div>
+    </div>
+
+    <!-- 💅 Style and Script -->
+    <style>
+        .scroll-gallery-section {
+            padding: 40px 20px;
+            background-color: #f9f9f9;
+            margin-bottom: 40px;
+        }
+
+        .gallery-heading {
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+
+        .scroll-container {
+            display: flex;
+            overflow-x: auto;
+            gap: 20px;
+            padding-bottom: 10px;
+            scroll-snap-type: x mandatory;
+        }
+
+            .scroll-container::-webkit-scrollbar {
+                height: 8px;
+            }
+
+            .scroll-container::-webkit-scrollbar-thumb {
+                background: #ccc;
+                border-radius: 4px;
+            }
+
+        .story-card {
+            flex: 0 0 auto;
+            width: 300px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            scroll-snap-align: start;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+            .story-card:hover {
+                transform: translateY(-5px);
+            }
+
+            .story-card img {
+                width: 100%;
+                height: 180px;
+                object-fit: cover;
+                border-top-left-radius: 12px;
+                border-top-right-radius: 12px;
+            }
+
+        .story-text {
+            padding: 15px;
+        }
+
+            .story-text h3 {
+                font-size: 18px;
+                margin-bottom: 8px;
+                color: #34495e;
+            }
+
+            .story-text p {
+                font-size: 14px;
+                color: #666;
+            }
+
+        @media (max-width: 768px) {
+            .story-card {
+                width: 240px;
+            }
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 999;
+            padding-top: 60px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.8);
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: auto;
+            padding: 20px;
+            width: 90%;
+            max-width: 700px;
+            border-radius: 10px;
+            text-align: center;
+            position: relative;
+        }
+
+            .modal-content img {
+                max-width: 100%;
+                height: auto;
+                margin-bottom: 20px;
+                border-radius: 8px;
+            }
+
+        .close {
+            color: #aaa;
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+            .close:hover {
+                color: #000;
+            }
+    </style>
+
+    <script>
+        function openModal(image, title, text) {
+            document.getElementById("modalImg").src = 'images/story/' + image;
+            document.getElementById("modalTitle").textContent = title;
+            document.getElementById("modalText").textContent = text;
+            document.getElementById("storyModal").style.display = "block";
+        }
+        function closeModal() {
+            document.getElementById("storyModal").style.display = "none";
+        }
+    </script>
+
+    <!-- ✨ Scroll Gallery Section End -->
     <!-- Resume Section
     ================================================== -->
     <section id="resume">
 
 
         <!-- Work
-    ----------------------------------------------- -->
+        ----------------------------------------------- -->
         <div class="row work">
 
             <div class="three columns header-col">
@@ -263,28 +540,28 @@
                 </div> <!-- item end -->
                 <!--<div class="row item">
 
-                <div class="twelve columns">
+                    <div class="twelve columns">
 
-                    <h3>Super Cool Studio</h3>
-                    <p class="info">UX Designer <span>&bull;</span> <em class="date">March 2007 - February 2010</em></p>
+                        <h3>Super Cool Studio</h3>
+                        <p class="info">UX Designer <span>&bull;</span> <em class="date">March 2007 - February 2010</em></p>
 
-                    <p>
-                        This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.
-                        Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem
-                        nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan
-                        ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat
-                    </p>
+                        <p>
+                            This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.
+                            Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem
+                            nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan
+                            ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat
+                        </p>
 
-                </div>
+                    </div>
 
-            </div>-->
+                </div>-->
                 <!-- item end -->
 
             </div> <!-- main-col end -->
 
         </div> <!-- End Work -->
         <!-- Education
-    ----------------------------------------------- -->
+        ----------------------------------------------- -->
         <div class="row education">
 
             <div class="three columns header-col">
@@ -307,14 +584,14 @@
                             <li>Nominated as the first Convener of the HOD Cell, Karnataka IAP Chapter</li>
                             <li>South Zone Coordinator, HOD Cell, Central IAP (2016&ndash;2018)</li>
                             <li>Actively involved in organizing the National Conference of IAP in Mangalore (1996)</li>
-                        </ul>                      
+                        </ul>
                         <p><strong>National Neonatology Forum (NNF)&nbsp; </strong></p>
                         <ul>
                             <li>President, NNF Karnataka (2013&ndash;2014)</li>
                             <li>Vice President, NNF Karnataka State Chapter (2003&ndash;2005)</li>
                             <li>Coordinator, NNF Task Force for Neonatal Survival (2008)</li>
                             <li>Executive Committee Member, NNF Karnataka Chapter (1999&ndash;2003)</li>
-                        </ul>                        
+                        </ul>
                         <p><strong>Leadership of Professional Meets&nbsp; </strong></p>
                         <ul>
                             <li>Organizing Chairman, 17th State Conference of NNF Karnataka (2014)</li>
@@ -325,7 +602,7 @@
                             <li>Finance Committee Chairperson, VI National Conference of Pediatric Rheumatology, KMC Mangalore (2008)</li>
                             <li>Director, INDO-US Emergency Medicine Summit (2008)</li>
                             <li>Organized numerous CMEs for postgraduate teaching and practicing pediatricians</li>
-                        </ul>                      
+                        </ul>
                     </div>
                 </div> <!-- item end -->
 
@@ -335,16 +612,16 @@
 
                         <h3>Community Service</h3>
                         <p>Dr. B. S. Baliga has consistently shown a deep commitment to society, with a blend of compassion, dedication and effective action. His engagement with voluntary organizations has enhanced healthcare access, child welfare and community support systems in the region.&nbsp;</p>
-                       
+
                         <p><strong>Child Adoption (1986&ndash;2001):&nbsp; </strong></p>
                         <p>Dr. Baliga rendered free services to Nirmala Welfare Society, Ullal, Mangalore, an organization dedicated to the welfare of orphans in the region. He facilitated professional healthcare and legal adoption processes, enabling countless children to find loving homes.</p>
-                       
+
                         <p><strong>Rehabilitation (1990):</strong></p>
                         <p>As a founder member of Chetana Society for Disabled Children, Dr. Baliga played a key role in its formative years. It runs the Chetana Child Development Centre in Mangalore, offering specialized care and education for developmentally challenged children from underprivileged backgrounds.</p>
-                     
+
                         <p><strong>Childline:</strong></p>
                         <p>Dr. Baliga has been actively involved with Childline, serving as a Central Advisory Board member and resource person for the Mangalore unit. This NGO-supported organization has rescued and rehabilitated thousands of vulnerable children, including child labourers, abused children and missing children, over the past two decades.&nbsp;</p>
-                        
+
                         <p><strong>Mangalore Medical Relief Society:</strong></p>
                         <p>Formed in 1971 by a group of dedicated doctors, the Mangalore Medical Relief Society mobilizes private funding to optimize resources at government hospitals in Mangalore. Dr. Baliga served this society in various capacities, including Programme Director (1995&ndash;2003), treasurer and secretary, generously contributing his time and effort to reach the needy.</p>
 
@@ -356,7 +633,7 @@
 
         </div> <!-- End Education -->
         <!-- Skills
-    ----------------------------------------------- -->
+        ----------------------------------------------- -->
         <!--<div class="row skill">
 
             <div class="three columns header-col">
@@ -383,10 +660,9 @@
                         <li><span class="bar-expand jquery"></span><em>jQuery</em></li>
                     </ul>
 
-                </div>--><!-- end skill-bars -->
-
-            <!--</div>--> <!-- main-col end -->
-
+                </div>-->
+        <!-- end skill-bars -->
+        <!--</div>--> <!-- main-col end -->
         <!--</div>--> <!-- End skills -->
 
     </section> <!-- Resume Section End-->
@@ -492,7 +768,6 @@
 
                         </div>
                     </div> <!-- item end -->
-
                     <!--<div class="columns portfolio-item">
                         <div class="item-wrap">
 
@@ -508,8 +783,8 @@
                             </a>
 
                         </div>
-                    </div>--> <!-- item end -->
-
+                    </div>-->
+                    <!-- item end -->
                     <!--<div class="columns portfolio-item">
                         <div class="item-wrap">
 
@@ -525,8 +800,8 @@
                             </a>
 
                         </div>
-                    </div>--> <!-- item end -->
-
+                    </div>-->
+                    <!-- item end -->
                     <!--<div class="columns portfolio-item">
                         <div class="item-wrap">
 
@@ -542,7 +817,8 @@
                             </a>
 
                         </div>
-                    </div>-->  <!-- item end -->
+                    </div>-->
+                    <!-- item end -->
 
                 </div> <!-- portfolio-wrapper end -->
 
@@ -562,13 +838,13 @@
                         both major district government hospitals and teaching affiliates of Kasturba Medical College, has been central to his efforts.
                     </p>
                     <p>
-                        During his tenure as Program Director (1995-2003) and later as Secretary of the Mangalore Medical Relief Society (MMRS), 
-                        Dr. Baliga identified the need for external funding to address gaps in government healthcare budgets. Leveraging support from philanthropists, charitable trusts, 
+                        During his tenure as Program Director (1995-2003) and later as Secretary of the Mangalore Medical Relief Society (MMRS),
+                        Dr. Baliga identified the need for external funding to address gaps in government healthcare budgets. Leveraging support from philanthropists, charitable trusts,
                         corporate donors, and local businesses, he initiated several projects to improve healthcare infrastructure.
                     </p>
                     <p>
-                        Key achievements under his leadership include the establishment of a High Dependency Unit at Wenlock Hospital and the first Neonatal Intensive Care Unit (NICU) at Lady Goschen Hospital in 1998. 
-                        These efforts laid the foundation for the comprehensive development of pediatric care in the region, 
+                        Key achievements under his leadership include the establishment of a High Dependency Unit at Wenlock Hospital and the first Neonatal Intensive Care Unit (NICU) at Lady Goschen Hospital in 1998.
+                        These efforts laid the foundation for the comprehensive development of pediatric care in the region,
                         culminating in the creation of the state-of-the-art Regional Advanced Pediatric Care Centre (RAPCC)
                     </p>
                     <!--<span class="categories"><i class="fa fa-tag"></i>Branding, Webdesign</span>-->
@@ -586,7 +862,7 @@
                 <img class="scale-with-grid" src="images/portfolioImg/modals/Picture2.jpg" alt="" />
 
                 <div class="description-box">
-                    <h4>Establishing NICU and PICU Facilities in District Hospitals  </h4>                   
+                    <h4>Establishing NICU and PICU Facilities in District Hospitals  </h4>
                     <p>
                         Dr. Baliga's contributions have directly benefited over one lakh children over two decades by introducing advanced neonatal and pediatric care facilities at Lady Goschen and Wenlock Hospitals.
                         His role in establishing and managing these facilities are one of the reasons why this region today enjoys much lower Infant Mortality Rate (IMR) and Under-5 Mortality Rate (U5MR) than the national average.
@@ -602,7 +878,7 @@
                             <li>A High Dependency Unit (1995-1996), benefiting 400 children annually, annually until its integration with RAPCC.</li>
                             <li>A Pediatric Critical Care Unit (2000-2002), treating 600 children annually until its integration with RAPCC.</li>
                             <li>Specialized Pediatric Surgery and chemotherapy wards introduced in 2003, followed by retroviral therapy for HIV-affected children in 2006.</li>
-                        </ol>                      
+                        </ol>
                     </p>
                     <!--<span class="categories"><i class="fa fa-tag"></i>Branding, Web Development</span>-->
                 </div>
@@ -621,10 +897,10 @@
                 <div class="description-box">
                     <h4>Establishing the Regional Advanced Pediatric Care Centre (RAPCC)  </h4>
                     <p>
-                        To address the growing demand for critical care among children, Dr. Baliga spearheaded the establishment of the RAPCC in 2007. This Rs. 12-crore project, supported by Rs. 6 crore in funding from Infosys Foundation, provides high-end neonatal and pediatric care to over 3,000 children annually. 
+                        To address the growing demand for critical care among children, Dr. Baliga spearheaded the establishment of the RAPCC in 2007. This Rs. 12-crore project, supported by Rs. 6 crore in funding from Infosys Foundation, provides high-end neonatal and pediatric care to over 3,000 children annually.
                         The RAPCC has become a lifeline for economically disadvantaged families from eight surrounding districts, offering free and advanced medical services.
                     </p>
-                  
+
                     <!--<span class="categories"><i class="fa fa-tag"></i>Branding</span>-->
                 </div>
 
@@ -643,8 +919,9 @@
                     <h4>Statewide Newborn Care Initiatives </h4>
                     <p>
                         Dr. Baliga extended his expertise statewide by facilitating the establishment of Special Newborn Care Units (SCNUs) in 23 district hospitals across Karnataka. This initiative, involving partnerships with seven medical colleges, added 240 neonatal beds to the public health system and trained medical personnel in neonatal care.
-                       These SCNUs have saved countless lives and continue to provide life-saving treatment to thousands of neonates monthly. </p>
-                    
+                        These SCNUs have saved countless lives and continue to provide life-saving treatment to thousands of neonates monthly.
+                    </p>
+
                     <!--<span class="categories"><i class="fa fa-tag"></i>Photography</span>-->
                 </div>
 
@@ -662,14 +939,14 @@
                 <div class="description-box">
                     <h4>Malaria Control Initiatives</h4>
                     <p>
-                        Dr. Baliga has played a pivotal role in controlling malaria in Mangalore since its outbreak in the early 1990s. 
+                        Dr. Baliga has played a pivotal role in controlling malaria in Mangalore since its outbreak in the early 1990s.
                         He was instrumental in setting up the Malaria Control Cell in 1995 under the Mangalore City Corporation, supported by funding from Corporation Bank.
                     </p>
                     <p>
-                        In recent years, Dr. Baliga collaborated with former Infosys executive Naren Koduvattat to develop customized Malaria Control Software. 
-                        This innovative system enables real-time monitoring and management of malaria cases in the region. The program significantly reduced malaria incidence in Mangalore by over 90% within five years, 
+                        In recent years, Dr. Baliga collaborated with former Infosys executive Naren Koduvattat to develop customized Malaria Control Software.
+                        This innovative system enables real-time monitoring and management of malaria cases in the region. The program significantly reduced malaria incidence in Mangalore by over 90% within five years,
                         earning the prestigious “Projects That Work” award at the TUFH conference in Ireland.
-                    </p>                   
+                    </p>
                     <!--<span class="categories"><i class="fa fa-tag"></i>Branding, Webdesign</span>-->
                 </div>
 
@@ -744,7 +1021,7 @@
     </section> <!-- Portfolio Section End-->
     <!-- Call-To-Action Section
     ================================================== -->
-<section id="Gallery">
+    <section id="Gallery">
 
         <div class="row">
 
@@ -800,7 +1077,6 @@
                                     <cite>Veerendra Prabhu</cite>
                                 </blockquote>
                             </li> <!-- slide ends -->
-
                             <!--<li>
                                 <blockquote>
                                     <p>
@@ -810,7 +1086,8 @@
                                     </p>
                                     <cite>Mr. Adobe</cite>
                                 </blockquote>
-                            </li>--> <!-- slide ends -->
+                            </li>-->
+                            <!-- slide ends -->
 
                         </ul>
 
@@ -920,16 +1197,16 @@
 
                             </span>
                             <!--<b><a href="#">2 Days Ago</a></b>-->
-                        </li>                    
+                        </li>
                     </ul>
                 </div>
                 <div class="widget widget_tweets">
 
                     <h4 class="widget-title">Consultation Hours</h4>
 
-                    <ul id="twitter">                      
+                    <ul id="twitter">
                         <li>
-                            <san>                              
+                            <san>
                                 <!--10:00 AM to 01:00 PM<br>-->
                                 03:00 PM to 07:00 PM<br>
                                 Weekdays only<br>
@@ -1009,68 +1286,68 @@
                 {
                     src: 'images/gallery/pic0.jpg',
                     thumb: 'img/thumb1.jpg',
-                    subHtml: `<div class="lightGallery-captions">                           
-                            </div>`,
+                    subHtml: `<div class="lightGallery-captions">
+                                        </div>`,
                 },
                 {
                     src: 'images/gallery/pic1.jpg',
                     thumb: 'img/thumb1.jpg',
-                    subHtml: `<div class="lightGallery-captions">                         
-                            </div>`,
+                    subHtml: `<div class="lightGallery-captions">
+                                        </div>`,
                 },
                 {
                     src: 'images/gallery/pic2.jpg',
                     thumb: 'img/thumb1.jpg',
-                    subHtml: `<div class="lightGallery-captions">                           
-                            </div>`,
+                    subHtml: `<div class="lightGallery-captions">
+                                        </div>`,
                 },
                 {
                     src: 'images/gallery/pic3.jpg',
                     thumb: 'img/thumb1.jpg',
-                    subHtml: `<div class="lightGallery-captions">                          
-                            </div>`,
+                    subHtml: `<div class="lightGallery-captions">
+                                        </div>`,
                 },
                 {
                     src: 'images/gallery/pic4.jpg',
                     thumb: 'img/thumb1.jpg',
-                    subHtml: `<div class="lightGallery-captions">                            
-                            </div>`,
+                    subHtml: `<div class="lightGallery-captions">
+                                        </div>`,
                 },
                 {
                     src: 'images/gallery/pic5.jpg',
                     thumb: 'img/thumb1.jpg',
-                    subHtml: `<div class="lightGallery-captions">                           
-                            </div>`,
+                    subHtml: `<div class="lightGallery-captions">
+                                        </div>`,
                 },
                 {
                     src: 'images/gallery/pic6.jpg',
                     thumb: 'img/thumb1.jpg',
-                    subHtml: `<div class="lightGallery-captions">                           
-                            </div>`,
+                    subHtml: `<div class="lightGallery-captions">
+                                        </div>`,
                 },
                 {
                     src: 'images/gallery/pic7.jpg',
                     thumb: 'img/thumb1.jpg',
-                    subHtml: `<div class="lightGallery-captions">                           
-                            </div>`,
+                    subHtml: `<div class="lightGallery-captions">
+                                        </div>`,
                 },
                 {
                     src: 'images/gallery/pic8.jpg',
                     thumb: 'img/thumb1.jpg',
-                    subHtml: `<div class="lightGallery-captions">                         
-                            </div>`,
+                    subHtml: `<div class="lightGallery-captions">
+                                        </div>`,
                 },
                 {
                     src: 'images/gallery/pic9.jpg',
                     thumb: 'img/thumb1.jpg',
-                    subHtml: `<div class="lightGallery-captions">                           
-                            </div>`,
+                    subHtml: `<div class="lightGallery-captions">
+                                        </div>`,
                 },
                 {
                     src: 'images/gallery/pic10.jpg',
                     thumb: 'img/thumb1.jpg',
-                    subHtml: `<div class="lightGallery-captions">                           
-                            </div>`,
+                    subHtml: `<div class="lightGallery-captions">
+                                        </div>`,
                 },
             ],
         });
