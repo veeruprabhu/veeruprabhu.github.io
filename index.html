@@ -32,6 +32,9 @@
     <link rel="shortcut icon" href="favicon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.8.3/css/lightgallery.min.css" integrity="sha512-QMCloGTsG2vNSnHcsxYTapI6pFQNnUP6yNizuLL5Wh3ha6AraI6HrJ3ABBaw6SIUHqlSTPQDs/SydiR98oTeaQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.8.3/lightgallery.min.js" integrity="sha512-n02TbYimj64qb98ed5WwkNiSw/i9Xlvv4Ehvhg0jLp3qMAMWCYUHbOMbppZ0vimtyiyw9NqNqxUZC4hq86f4aQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- ✅ Font Awesome for phone icon (reliable CDN) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 <style>
     .profile-pic2 {
         position: relative;
@@ -159,6 +162,100 @@
     @media (max-width: 768px) {
         .story-card {
             width: 240px;
+        }
+    }
+    /* 🔹 Container for floating buttons */
+    .floating_buttons {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        display: flex;
+        flex-direction: row; /* ✅ Side by side */
+        gap: 2px;
+        z-index: 999;
+    }
+
+    /* 🔹 Button container */
+    .float_button {
+        display: flex;
+        flex-direction: column; /* ✅ Stack icon + text vertically */
+        align-items: center;
+        text-decoration: none;
+        position: relative;       
+    }
+
+    /* 🔹 Icon box */
+    .icon {
+        width: 50px;
+        height: 50px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease;
+        animation: bounce 1.5s infinite;
+        color: white;
+        font-size: 26px;
+        z-index: 2;
+    }
+
+    /* 🔹 Colors */
+    .whatsapp_icon {
+        background-color: #25D366;
+    }
+
+    .call_icon {
+        background-color: #007BFF;
+    }
+
+    /* 🔹 Hover text */
+    .button_text {
+        margin-top: 8px;
+        padding: 6px 10px;
+        border-radius: 8px;
+        font-size: 13px;
+        font-weight: bold;
+        font-family: Arial, sans-serif;
+        color: white;
+        opacity: 0;
+        transform: translateY(10px);
+        transition: all 0.3s ease;
+        pointer-events: none;
+        white-space: nowrap;
+    }
+
+    /* ✅ Match text background to icon */
+    .float_button.whatsapp .button_text {
+        background-color: #25D366;
+    }
+
+    .float_button.call .button_text {
+        background-color: #007BFF;
+    }
+
+    /* 🔹 Hover Effects */
+    .float_button:hover .button_text {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .float_button:hover .icon {
+        transform: scale(1.1);
+    }
+
+    /* 🔹 Bounce Animation */
+    @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% {
+            transform: translateY(0);
+        }
+
+        40% {
+            transform: translateY(-6px);
+        }
+
+        60% {
+            transform: translateY(-3px);
         }
     }
 
@@ -1222,6 +1319,29 @@
         </div>
 
     </section> <!-- Contact Section End-->
+    <!-- ✅ Floating Buttons Wrapper -->
+    <div class="floating_buttons">
+        <!-- ✅ Call Button -->
+        <a href="tel:+917490810791" class="float_button call">
+            <div class="icon call_icon">
+                <i class="fas fa-phone-alt"></i>
+            </div>
+            <span class="button_text">Call Us</span>
+        </a>
+        <!-- ✅ WhatsApp Button -->
+        <a href="https://wa.me/917490810791" class="float_button whatsapp" target="_blank">
+            <div class="icon whatsapp_icon">
+                <i class="fab fa-whatsapp"></i>
+            </div>
+            <span class="button_text">WhatsApp Us</span>
+        </a>
+
+
+
+    </div>
+
+
+
     <!-- footer
     ================================================== -->
     <footer>
@@ -1287,67 +1407,67 @@
                     src: 'images/gallery/pic0.jpg',
                     thumb: 'img/thumb1.jpg',
                     subHtml: `<div class="lightGallery-captions">
-                                        </div>`,
+                                                    </div>`,
                 },
                 {
                     src: 'images/gallery/pic1.jpg',
                     thumb: 'img/thumb1.jpg',
                     subHtml: `<div class="lightGallery-captions">
-                                        </div>`,
+                                                    </div>`,
                 },
                 {
                     src: 'images/gallery/pic2.jpg',
                     thumb: 'img/thumb1.jpg',
                     subHtml: `<div class="lightGallery-captions">
-                                        </div>`,
+                                                    </div>`,
                 },
                 {
                     src: 'images/gallery/pic3.jpg',
                     thumb: 'img/thumb1.jpg',
                     subHtml: `<div class="lightGallery-captions">
-                                        </div>`,
+                                                    </div>`,
                 },
                 {
                     src: 'images/gallery/pic4.jpg',
                     thumb: 'img/thumb1.jpg',
                     subHtml: `<div class="lightGallery-captions">
-                                        </div>`,
+                                                    </div>`,
                 },
                 {
                     src: 'images/gallery/pic5.jpg',
                     thumb: 'img/thumb1.jpg',
                     subHtml: `<div class="lightGallery-captions">
-                                        </div>`,
+                                                    </div>`,
                 },
                 {
                     src: 'images/gallery/pic6.jpg',
                     thumb: 'img/thumb1.jpg',
                     subHtml: `<div class="lightGallery-captions">
-                                        </div>`,
+                                                    </div>`,
                 },
                 {
                     src: 'images/gallery/pic7.jpg',
                     thumb: 'img/thumb1.jpg',
                     subHtml: `<div class="lightGallery-captions">
-                                        </div>`,
+                                                    </div>`,
                 },
                 {
                     src: 'images/gallery/pic8.jpg',
                     thumb: 'img/thumb1.jpg',
                     subHtml: `<div class="lightGallery-captions">
-                                        </div>`,
+                                                    </div>`,
                 },
                 {
                     src: 'images/gallery/pic9.jpg',
                     thumb: 'img/thumb1.jpg',
                     subHtml: `<div class="lightGallery-captions">
-                                        </div>`,
+                                                    </div>`,
                 },
                 {
                     src: 'images/gallery/pic10.jpg',
                     thumb: 'img/thumb1.jpg',
                     subHtml: `<div class="lightGallery-captions">
-                                        </div>`,
+                                                    </div>`,
                 },
             ],
         });
