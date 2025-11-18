@@ -389,6 +389,17 @@
     <section class="scroll-gallery-section">
         <h2 class="gallery-heading">Legacy of Service & Milestones</h2>
         <div class="scroll-container">
+            <!-- Story 1 -->
+            <div class="story-card" onclick="openModal('story_10.jpg', 'Conferred by Konkani Language and Cultural Foundation, World Konkani Centre, Mangaluru, for outstanding contributions to neonatal critical care in district hospitals and efforts in malaria control.')">
+                <img src="images/story/story_10.jpg" alt="Basti Vaman Shenoy Vishwa Konkani Seva Puraskar – 2022">
+                <div class="story-text">
+                    <h3>Basti Vaman Shenoy Vishwa Konkani Seva Puraskar – 2022</h3>
+                    <p>
+                        Conferred by Konkani Language and Cultural Foundation, World Konkani Centre, Mangaluru, for outstanding contributions to neonatal critical care in district hospitals and efforts in malaria control.....
+                    </p>
+                </div>
+            </div>
+
             <!-- Story 4 -->
             <div class="story-card" onclick="openModal('story_9.jpg', 'Lifetime Achievement Award - 2019', 'Conferred by IAP Neonatology Chapter for his contributions to neonatal intensive care in public health sector during IAPNEOCON 2019.')">
                 <img src="images/story/story_9.jpg" alt="Lifetime Achievement Award - 2019">
@@ -625,161 +636,128 @@
 
 
     <!-- News Gallery Section -->
-    <section id="news-gallery" style="padding: 0; margin: 0; overflow: hidden; height: 100vh; position: relative;">
+    <section id="news-gallery" style="padding: 0; margin: 0; overflow: hidden; height: 100vh; position: relative; background: #000;">
 
-        <!-- Section Header (Optional) -->
-        <div style=" top: 1px; left: 0; width: 100%; text-align: center; z-index: 100; background: rgba(0,0,0,0.7); padding: 15px 0;">
+        <!-- Section Header -->
+        <div style="top: 1px; left: 0; width: 100%; text-align: center; z-index: 100; background: rgba(0,0,0,0.7); padding: 15px 0;">
             <h2 style="color: white; margin: 0; font-size: 28px; font-weight: bold;">News Gallery</h2>
             <p style="color: #ccc; margin: 5px 0 0 0;">Press cuttings & media coverage</p>
         </div>
 
+        <!-- Navigation Arrows -->
+        <button class="nav-arrow prev" style="position: absolute; top: 50%; left: 20px; transform: translateY(-50%); background: rgba(0,0,0,0.7); color: white; border: none; font-size: 24px; padding: 15px; cursor: pointer; z-index: 100; transition: background 0.3s ease;">
+            ❮
+        </button>
+        <button class="nav-arrow next" style="position: absolute; top: 50%; right: 20px; transform: translateY(-50%); background: rgba(0,0,0,0.7); color: white; border: none; font-size: 24px; padding: 15px; cursor: pointer; z-index: 100; transition: background 0.3s ease;">
+            ❯
+        </button>
+
         <!-- Scroll Container -->
-        <div class="news-scroll-container" style="height: 100vh; scroll-snap-type: y mandatory; overflow-y: scroll; scroll-behavior: smooth;">
+        <div class="news-scroll-container" style="height: 100vh; display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth;">
 
             <!-- News Item 1 -->
-            <div class="news-item" style="height: 100vh; scroll-snap-align: start; position: relative;">
+            <div class="news-item" style="flex: 0 0 100vw; height: 100vh; scroll-snap-align: start; position: relative;">
                 <img src="images/news/news1.jpg" alt="News 1"
                      style="width: 100%; height: 100%; object-fit: contain; background: #000;">
-                <!--<div class="news-caption" style="position: absolute; bottom: 20px; left: 0; width: 100%; text-align: center; color: white; background: rgba(0,0,0,0.7); padding: 10px;">
-            <p style="margin: 0; font-size: 16px;">News Headline 1 - Date</p>
-        </div>-->
             </div>
 
             <!-- News Item 2 -->
-            <div class="news-item" style="height: 100vh; scroll-snap-align: start; position: relative;">
+            <div class="news-item" style="flex: 0 0 100vw; height: 100vh; scroll-snap-align: start; position: relative;">
                 <img src="images/news/news2.jpg" alt="News 2"
                      style="width: 100%; height: 100%; object-fit: contain; background: #000;">
-                <!--<div class="news-caption" style="position: absolute; bottom: 20px; left: 0; width: 100%; text-align: center; color: white; background: rgba(0,0,0,0.7); padding: 10px;">
-            <p style="margin: 0; font-size: 16px;">News Headline 2 - Date</p>
-        </div>-->
             </div>
 
             <!-- News Item 3 -->
-            <div class="news-item" style="height: 100vh; scroll-snap-align: start; position: relative;">
+            <div class="news-item" style="flex: 0 0 100vw; height: 100vh; scroll-snap-align: start; position: relative;">
                 <img src="images/news/news3.jpg" alt="News 3"
                      style="width: 100%; height: 100%; object-fit: contain; background: #000;">
-                <!--<div class="news-caption" style="position: absolute; bottom: 20px; left: 0; width: 100%; text-align: center; color: white; background: rgba(0,0,0,0.7); padding: 10px;">
-            <p style="margin: 0; font-size: 16px;">News Headline 3 - Date</p>
-        </div>-->
             </div>
 
             <!-- News Item 4 -->
-            <div class="news-item" style="height: 100vh; scroll-snap-align: start; position: relative;">
+            <div class="news-item" style="flex: 0 0 100vw; height: 100vh; scroll-snap-align: start; position: relative;">
                 <img src="images/news/news4.jpg" alt="News 4"
                      style="width: 100%; height: 100%; object-fit: contain; background: #000;">
-                <!--<div class="news-caption" style="position: absolute; bottom: 20px; left: 0; width: 100%; text-align: center; color: white; background: rgba(0,0,0,0.7); padding: 10px;">
-            <p style="margin: 0; font-size: 16px;">News Headline 1 - Date</p>
-        </div>-->
             </div>
+
             <!-- News Item 5 -->
-            <div class="news-item" style="height: 100vh; scroll-snap-align: start; position: relative;">
+            <div class="news-item" style="flex: 0 0 100vw; height: 100vh; scroll-snap-align: start; position: relative;">
                 <img src="images/news/news5.jpg" alt="News 5"
                      style="width: 100%; height: 100%; object-fit: contain; background: #000;">
-                <!--<div class="news-caption" style="position: absolute; bottom: 20px; left: 0; width: 100%; text-align: center; color: white; background: rgba(0,0,0,0.7); padding: 10px;">
-            <p style="margin: 0; font-size: 16px;">News Headline 1 - Date</p>
-        </div>-->
             </div>
+
             <!-- News Item 6 -->
-            <div class="news-item" style="height: 100vh; scroll-snap-align: start; position: relative;">
+            <div class="news-item" style="flex: 0 0 100vw; height: 100vh; scroll-snap-align: start; position: relative;">
                 <img src="images/news/news6.jpg" alt="News 6"
                      style="width: 100%; height: 100%; object-fit: contain; background: #000;">
-                <!--<div class="news-caption" style="position: absolute; bottom: 20px; left: 0; width: 100%; text-align: center; color: white; background: rgba(0,0,0,0.7); padding: 10px;">
-            <p style="margin: 0; font-size: 16px;">News Headline 1 - Date</p>
-        </div>-->
             </div>
+
             <!-- News Item 7 -->
-            <div class="news-item" style="height: 100vh; scroll-snap-align: start; position: relative;">
+            <div class="news-item" style="flex: 0 0 100vw; height: 100vh; scroll-snap-align: start; position: relative;">
                 <img src="images/news/news7.jpg" alt="News 7"
                      style="width: 100%; height: 100%; object-fit: contain; background: #000;">
-                <!--<div class="news-caption" style="position: absolute; bottom: 20px; left: 0; width: 100%; text-align: center; color: white; background: rgba(0,0,0,0.7); padding: 10px;">
-            <p style="margin: 0; font-size: 16px;">News Headline 1 - Date</p>
-        </div>-->
             </div>
+
             <!-- News Item 8 -->
-            <div class="news-item" style="height: 100vh; scroll-snap-align: start; position: relative;">
+            <div class="news-item" style="flex: 0 0 100vw; height: 100vh; scroll-snap-align: start; position: relative;">
                 <img src="images/news/news8.jpg" alt="News 8"
                      style="width: 100%; height: 100%; object-fit: contain; background: #000;">
-                <!--<div class="news-caption" style="position: absolute; bottom: 20px; left: 0; width: 100%; text-align: center; color: white; background: rgba(0,0,0,0.7); padding: 10px;">
-            <p style="margin: 0; font-size: 16px;">News Headline 1 - Date</p>
-        </div>-->
             </div>
+
             <!-- News Item 9 -->
-            <div class="news-item" style="height: 100vh; scroll-snap-align: start; position: relative;">
+            <div class="news-item" style="flex: 0 0 100vw; height: 100vh; scroll-snap-align: start; position: relative;">
                 <img src="images/news/news9.jpg" alt="News 9"
                      style="width: 100%; height: 100%; object-fit: contain; background: #000;">
-                <!--<div class="news-caption" style="position: absolute; bottom: 20px; left: 0; width: 100%; text-align: center; color: white; background: rgba(0,0,0,0.7); padding: 10px;">
-            <p style="margin: 0; font-size: 16px;">News Headline 1 - Date</p>
-        </div>-->
             </div>
+
             <!-- News Item 10 -->
-            <div class="news-item" style="height: 100vh; scroll-snap-align: start; position: relative;">
+            <div class="news-item" style="flex: 0 0 100vw; height: 100vh; scroll-snap-align: start; position: relative;">
                 <img src="images/news/news10.jpg" alt="News 10"
                      style="width: 100%; height: 100%; object-fit: contain; background: #000;">
-                <!--<div class="news-caption" style="position: absolute; bottom: 20px; left: 0; width: 100%; text-align: center; color: white; background: rgba(0,0,0,0.7); padding: 10px;">
-            <p style="margin: 0; font-size: 16px;">News Headline 1 - Date</p>
-        </div>-->
             </div>
+
             <!-- News Item 11 -->
-            <div class="news-item" style="height: 100vh; scroll-snap-align: start; position: relative;">
+            <div class="news-item" style="flex: 0 0 100vw; height: 100vh; scroll-snap-align: start; position: relative;">
                 <img src="images/news/news11.jpg" alt="News 11"
                      style="width: 100%; height: 100%; object-fit: contain; background: #000;">
-                <!--<div class="news-caption" style="position: absolute; bottom: 20px; left: 0; width: 100%; text-align: center; color: white; background: rgba(0,0,0,0.7); padding: 10px;">
-            <p style="margin: 0; font-size: 16px;">News Headline 1 - Date</p>
-        </div>-->
             </div>
 
             <!-- News Item 12 -->
-            <div class="news-item" style="height: 100vh; scroll-snap-align: start; position: relative;">
+            <div class="news-item" style="flex: 0 0 100vw; height: 100vh; scroll-snap-align: start; position: relative;">
                 <img src="images/news/news12.jpg" alt="News 12"
                      style="width: 100%; height: 100%; object-fit: contain; background: #000;">
-                <!--<div class="news-caption" style="position: absolute; bottom: 20px; left: 0; width: 100%; text-align: center; color: white; background: rgba(0,0,0,0.7); padding: 10px;">
-            <p style="margin: 0; font-size: 16px;">News Headline 1 - Date</p>
-        </div>-->
             </div>
 
             <!-- News Item 13 -->
-            <div class="news-item" style="height: 100vh; scroll-snap-align: start; position: relative;">
+            <div class="news-item" style="flex: 0 0 100vw; height: 100vh; scroll-snap-align: start; position: relative;">
                 <img src="images/news/news13.jpg" alt="News 13"
                      style="width: 100%; height: 100%; object-fit: contain; background: #000;">
-                <!--<div class="news-caption" style="position: absolute; bottom: 20px; left: 0; width: 100%; text-align: center; color: white; background: rgba(0,0,0,0.7); padding: 10px;">
-            <p style="margin: 0; font-size: 16px;">News Headline 1 - Date</p>
-        </div>-->
             </div>
 
             <!-- News Item 14 -->
-            <div class="news-item" style="height: 100vh; scroll-snap-align: start; position: relative;">
+            <div class="news-item" style="flex: 0 0 100vw; height: 100vh; scroll-snap-align: start; position: relative;">
                 <img src="images/news/news14.jpg" alt="News 14"
                      style="width: 100%; height: 100%; object-fit: contain; background: #000;">
-                <!--<div class="news-caption" style="position: absolute; bottom: 20px; left: 0; width: 100%; text-align: center; color: white; background: rgba(0,0,0,0.7); padding: 10px;">
-            <p style="margin: 0; font-size: 16px;">News Headline 1 - Date</p>
-        </div>-->
             </div>
 
             <!-- News Item 15 -->
-            <div class="news-item" style="height: 100vh; scroll-snap-align: start; position: relative;">
+            <div class="news-item" style="flex: 0 0 100vw; height: 100vh; scroll-snap-align: start; position: relative;">
                 <img src="images/news/news15.jpg" alt="News 15"
                      style="width: 100%; height: 100%; object-fit: contain; background: #000;">
-                <!--<div class="news-caption" style="position: absolute; bottom: 20px; left: 0; width: 100%; text-align: center; color: white; background: rgba(0,0,0,0.7); padding: 10px;">
-            <p style="margin: 0; font-size: 16px;">News Headline 1 - Date</p>
-        </div>-->
             </div>
-
-            <!-- Add more news items as needed -->
-
 
         </div>
 
         <!-- Navigation Dots -->
-        <div class="news-nav-dots" style="position: absolute; right: 20px; top: 50%; transform: translateY(-50%); z-index: 100;">
+        <div class="news-nav-dots" style="position: absolute; bottom: 80px; left: 50%; transform: translateX(-50%); z-index: 100; display: flex; gap: 10px;">
             <!-- Dots will be generated by JavaScript -->
         </div>
 
         <!-- Auto-scroll Controls -->
-        <div class="auto-scroll-controls" style="position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); z-index: 100; background: rgba(0,0,0,0.7); padding: 10px 20px; border-radius: 25px;">
-            <button id="pauseAutoScroll" style="background: #007BFF; color: white; border: none; padding: 8px 15px; border-radius: 15px; cursor: pointer; margin: 0 5px;">
+        <div class="auto-scroll-controls" style="position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); z-index: 100; background: rgba(0,0,0,0.7); padding: 10px 20px; border-radius: 25px;">
+            <button id="pauseAutoScroll" style="background: #007BFF; color: white; border: none; padding: 8px 15px; border-radius: 15px; cursor: pointer; margin: 0 5px; transition: opacity 0.3s ease;">
                 ⏸️ Pause
             </button>
-            <button id="playAutoScroll" style="background: #25D366; color: white; border: none; padding: 8px 15px; border-radius: 15px; cursor: pointer; margin: 0 5px;">
+            <button id="playAutoScroll" style="background: #25D366; color: white; border: none; padding: 8px 15px; border-radius: 15px; cursor: pointer; margin: 0 5px; transition: opacity 0.3s ease;">
                 ▶️ Play
             </button>
         </div>
@@ -802,6 +780,25 @@
         .news-item {
             transition: opacity 0.5s ease;
         }
+
+        /* Hover effects for navigation arrows */
+        .nav-arrow:hover {
+            background: rgba(0,0,0,0.9) !important;
+        }
+
+        /* Navigation dot styles */
+        .nav-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #ccc;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+            .nav-dot.active {
+                background-color: #007BFF;
+            }
     </style>
 
     <script>
@@ -813,17 +810,14 @@
         const navDotsContainer = document.querySelector('.news-nav-dots');
         const pauseBtn = document.getElementById('pauseAutoScroll');
         const playBtn = document.getElementById('playAutoScroll');
+        const prevBtn = document.querySelector('.nav-arrow.prev');
+        const nextBtn = document.querySelector('.nav-arrow.next');
 
         // Create navigation dots
         newsItems.forEach((_, index) => {
             const dot = document.createElement('div');
-            dot.style.width = '12px';
-            dot.style.height = '12px';
-            dot.style.borderRadius = '50%';
-            dot.style.backgroundColor = index === 0 ? '#007BFF' : '#ccc';
-            dot.style.margin = '10px 0';
-            dot.style.cursor = 'pointer';
-            dot.style.transition = 'background-color 0.3s ease';
+            dot.className = 'nav-dot';
+            if (index === 0) dot.classList.add('active');
 
             dot.addEventListener('click', () => {
                 scrollToNewsItem(index);
@@ -835,9 +829,10 @@
         function scrollToNewsItem(index) {
             const item = newsItems[index];
             scrollContainer.scrollTo({
-                top: item.offsetTop,
+                left: item.offsetLeft,
                 behavior: 'smooth'
             });
+            updateNavDots(index);
         }
 
         function startAutoScroll() {
@@ -846,10 +841,9 @@
             autoScrollInterval = setInterval(() => {
                 if (!isAutoScrolling) return;
 
-                const currentScroll = scrollContainer.scrollTop;
-                const windowHeight = window.innerHeight;
-                const totalHeight = scrollContainer.scrollHeight;
-                const currentItemIndex = Math.round(currentScroll / windowHeight);
+                const currentScroll = scrollContainer.scrollLeft;
+                const windowWidth = window.innerWidth;
+                const currentItemIndex = Math.round(currentScroll / windowWidth);
 
                 let nextItemIndex = currentItemIndex + 1;
                 if (nextItemIndex >= newsItems.length) {
@@ -858,16 +852,17 @@
 
                 scrollToNewsItem(nextItemIndex);
 
-                // Update navigation dots
-                updateNavDots(nextItemIndex);
-
             }, 5000); // Change image every 5 seconds
         }
 
         function updateNavDots(activeIndex) {
-            const dots = navDotsContainer.querySelectorAll('div');
+            const dots = navDotsContainer.querySelectorAll('.nav-dot');
             dots.forEach((dot, index) => {
-                dot.style.backgroundColor = index === activeIndex ? '#007BFF' : '#ccc';
+                if (index === activeIndex) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
             });
         }
 
@@ -887,13 +882,30 @@
         pauseBtn.addEventListener('click', pauseAutoScroll);
         playBtn.addEventListener('click', playAutoScroll);
 
+        // Navigation arrows
+        prevBtn.addEventListener('click', () => {
+            const currentScroll = scrollContainer.scrollLeft;
+            const windowWidth = window.innerWidth;
+            const currentItemIndex = Math.round(currentScroll / windowWidth);
+            const prevItemIndex = currentItemIndex > 0 ? currentItemIndex - 1 : newsItems.length - 1;
+            scrollToNewsItem(prevItemIndex);
+        });
+
+        nextBtn.addEventListener('click', () => {
+            const currentScroll = scrollContainer.scrollLeft;
+            const windowWidth = window.innerWidth;
+            const currentItemIndex = Math.round(currentScroll / windowWidth);
+            const nextItemIndex = currentItemIndex < newsItems.length - 1 ? currentItemIndex + 1 : 0;
+            scrollToNewsItem(nextItemIndex);
+        });
+
         // Manual scroll detection - pause auto-scroll when user manually scrolls
         let scrollTimeout;
         scrollContainer.addEventListener('scroll', () => {
             // Update dots on manual scroll
-            const currentScroll = scrollContainer.scrollTop;
-            const windowHeight = window.innerHeight;
-            const currentItemIndex = Math.round(currentScroll / windowHeight);
+            const currentScroll = scrollContainer.scrollLeft;
+            const windowWidth = window.innerWidth;
+            const currentItemIndex = Math.round(currentScroll / windowWidth);
             updateNavDots(currentItemIndex);
 
             // Pause auto-scroll temporarily when user manually scrolls
@@ -903,6 +915,22 @@
             scrollTimeout = setTimeout(() => {
                 playAutoScroll();
             }, 10000); // Resume auto-scroll after 10 seconds of inactivity
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                prevBtn.click();
+            } else if (e.key === 'ArrowRight') {
+                nextBtn.click();
+            } else if (e.key === ' ') {
+                // Spacebar toggles auto-scroll
+                if (isAutoScrolling) {
+                    pauseAutoScroll();
+                } else {
+                    playAutoScroll();
+                }
+            }
         });
 
         // Start auto-scroll when page loads
@@ -916,7 +944,6 @@
             if (autoScrollInterval) clearInterval(autoScrollInterval);
         });
     </script>
-
 
 
     <!-- ✨ Scroll Gallery Section End -->
@@ -1773,67 +1800,67 @@
                     src: 'images/gallery/pic0.jpg',
                     thumb: 'img/thumb1.jpg',
                     subHtml: `<div class="lightGallery-captions">
-                                                        </div>`,
+                                                            </div>`,
                 },
                 {
                     src: 'images/gallery/pic1.jpg',
                     thumb: 'img/thumb1.jpg',
                     subHtml: `<div class="lightGallery-captions">
-                                                        </div>`,
+                                                            </div>`,
                 },
                 {
                     src: 'images/gallery/pic2.jpg',
                     thumb: 'img/thumb1.jpg',
                     subHtml: `<div class="lightGallery-captions">
-                                                        </div>`,
+                                                            </div>`,
                 },
                 {
                     src: 'images/gallery/pic3.jpg',
                     thumb: 'img/thumb1.jpg',
                     subHtml: `<div class="lightGallery-captions">
-                                                        </div>`,
+                                                            </div>`,
                 },
                 {
                     src: 'images/gallery/pic4.jpg',
                     thumb: 'img/thumb1.jpg',
                     subHtml: `<div class="lightGallery-captions">
-                                                        </div>`,
+                                                            </div>`,
                 },
                 {
                     src: 'images/gallery/pic5.jpg',
                     thumb: 'img/thumb1.jpg',
                     subHtml: `<div class="lightGallery-captions">
-                                                        </div>`,
+                                                            </div>`,
                 },
                 {
                     src: 'images/gallery/pic6.jpg',
                     thumb: 'img/thumb1.jpg',
                     subHtml: `<div class="lightGallery-captions">
-                                                        </div>`,
+                                                            </div>`,
                 },
                 {
                     src: 'images/gallery/pic7.jpg',
                     thumb: 'img/thumb1.jpg',
                     subHtml: `<div class="lightGallery-captions">
-                                                        </div>`,
+                                                            </div>`,
                 },
                 {
                     src: 'images/gallery/pic8.jpg',
                     thumb: 'img/thumb1.jpg',
                     subHtml: `<div class="lightGallery-captions">
-                                                        </div>`,
+                                                            </div>`,
                 },
                 {
                     src: 'images/gallery/pic9.jpg',
                     thumb: 'img/thumb1.jpg',
                     subHtml: `<div class="lightGallery-captions">
-                                                        </div>`,
+                                                            </div>`,
                 },
                 {
                     src: 'images/gallery/pic10.jpg',
                     thumb: 'img/thumb1.jpg',
                     subHtml: `<div class="lightGallery-captions">
-                                                        </div>`,
+                                                            </div>`,
                 },
             ],
         });
